@@ -12,4 +12,6 @@ export class UsuarioService extends AbstractService<Usuario> {
 	constructor(dbService: NgxIndexedDBService) {
         super('usuario', dbService);
      }
+
+     
 }

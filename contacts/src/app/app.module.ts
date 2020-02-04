@@ -8,6 +8,7 @@ import { DB_CONFIG } from './core/db/config';
 import { AppContainerModule } from './modules/app-container/app-container.module';
 import { AcessoModule } from './modules/acesso/acesso.module';
 import { AppRoutingModule } from './app-routing.module';
+import { MatSnackBarModule } from '@angular/material';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AppComponent } from './app.component';
     AppContainerModule,
     AppRoutingModule,
     BrowserModule,
-    AcessoModule
+    AcessoModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

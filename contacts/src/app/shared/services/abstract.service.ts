@@ -19,8 +19,9 @@ export class AbstractService<T> {
         return this.dbService.update(this.store, obj);
     }
 
-    getById(id: string | number): Promise<number> {
-        return this.dbService.getByID(this.store, id);
+    getById(id: string | number): Promise<T> {
+        console.log('id', id);
+        return this.dbService.getByKey(this.store, id);
     }
 
     getAll(): Promise<any[]> {

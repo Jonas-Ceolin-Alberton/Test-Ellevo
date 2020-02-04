@@ -11,12 +11,12 @@ import { AuthService } from 'src/app/core/auth/auth.service';
 export class LoginComponent implements OnInit {
 	usuario = new Usuario();
 
-	constructor(private AuthService: AuthService) { }
+	constructor(private authService: AuthService) { }
 
 	ngOnInit() {
 	}
 
 	onSubmitForm() {
-		
+		this.authService.doLogin(this.usuario);
 	}
 }
