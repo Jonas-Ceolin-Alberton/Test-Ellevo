@@ -1,0 +1,30 @@
+<div class="container">
+	<mat-card class="cadastro-container">
+		<img class="logo" src="../../../../assets/images/logo.png">
+		<form (ngSubmit)="onSubmit()" #form="ngForm" autocomplete="off" class="form">
+			<mat-form-field>
+				<input matInput color="primary" placeholder="Nome completo" name="nome" [(ngModel)]="usuario.nome"
+					required type="text">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput color="primary" placeholder="Email" name="email" [(ngModel)]="usuario.email" required
+					type="email">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput color="primary" placeholder="Senha" name="senha" autocomplete="off" [(ngModel)]="usuario.senha" required
+					type="password">
+			</mat-form-field>
+
+			<mat-form-field>
+				<input matInput color="primary" placeholder="Confirmar senha" name="confirmacao" required
+					type="password" [ngModel]="confirmacaoPassword" (ngModelChange)="confirmarPassword($event)">
+				<mat-error>As senhas devem ser compativeis</mat-error>
+			</mat-form-field>
+
+			<button class="main-button" mat-raised-button color="primary" type="submit"
+				[disabled]="form.invalid">Cadastrar</button>
+		</form>
+	</mat-card>
+</div>

@@ -4,19 +4,23 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { LoginComponent } from './login/login.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 	declarations: [
-		LoginComponent
+		LoginComponent,
+		CadastroUsuarioComponent
 	],
 	imports: [
-		CommonModule,
-		MatCardModule,
-		MatButtonModule,
         MatFormFieldModule,
+		MatButtonModule,
         MatInputModule,
-        FormsModule,
+		MatCardModule,
+		CommonModule,
+		RouterModule,
+		FormsModule,
 	]
 })
 export class AcessoModule { }

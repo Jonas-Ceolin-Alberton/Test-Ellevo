@@ -2,8 +2,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { NgxIndexedDBModule } from 'ngx-indexed-db';
+import { DB_CONFIG } from './core/db/config';
+
 import { AppContainerModule } from './modules/app-container/app-container.module';
-import { AcessoModule } from './core/acesso/acesso.module';
+import { AcessoModule } from './modules/acesso/acesso.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -12,11 +15,12 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
+    NgxIndexedDBModule.forRoot(DB_CONFIG),
     BrowserAnimationsModule,
     AppContainerModule,
     AppRoutingModule,
     BrowserModule,
-    AcessoModule,
+    AcessoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
