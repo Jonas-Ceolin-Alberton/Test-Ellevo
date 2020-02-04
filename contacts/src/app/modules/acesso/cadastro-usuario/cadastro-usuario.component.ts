@@ -26,7 +26,8 @@ export class CadastroUsuarioComponent implements OnInit {
 	
 	onSubmit(): void {
 		this.usuarioService.save(this.usuario).then( 
-			user => console.log('user', user)
+			user => console.log('user', user),
+			error => console.log('rr', error)
 		)
 	}
 }

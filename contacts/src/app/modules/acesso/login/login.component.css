@@ -29,12 +29,14 @@
 
 .cadastro {
     display: flex;
-    align-self: center;
+    outline: none;
     font-size: 14px;
-    margin-top: 20px;
     cursor: pointer;
+    margin-top: 20px;
     color: #333333;
+    align-self: center;
 }
+
 
 @media (max-width: 800px) {
 
