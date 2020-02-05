@@ -1,0 +1,21 @@
+<div class="toolbar-container primary">
+	<h3 class="titulo-rota">Contatos</h3>
+
+	<div class="pesquisa">
+		<input class="input primary-black" placeholder="Pesquisar..">
+	</div>
+
+	<div class="exit">
+		<label class="nome">Olá, {{nomeUsuario}}</label>
+
+		<button mat-icon-button [matMenuTriggerFor]="menu" class="button-exit">
+			<mat-icon>person</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item (click)="doLogout()">
+				<mat-icon>exit_to_app</mat-icon>
+				<span>Sair</span>
+			</button>
+		</mat-menu>
+	</div>
+</div>

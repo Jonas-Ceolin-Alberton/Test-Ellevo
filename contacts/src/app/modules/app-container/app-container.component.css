@@ -1,0 +1,13 @@
+.app-sidenav{
+    position: fixed;
+    float: left;
+    display: block;
+    width: 200px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: white;
+    transition: .3s;
+    z-index: 10;
+}
+

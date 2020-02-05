@@ -21,6 +21,7 @@ export class AuthService {
 
 	logout() {
 		localStorage.clear();
+		this.navigateToLogin();
 	}
 
 	doLogin(usuario: Usuario): void {
@@ -54,5 +55,9 @@ export class AuthService {
 
 	private navigateToApp(): void {
 		this.router.navigate(['/app']);
+	}
+
+	private navigateToLogin(): void {
+		this.router.navigate(['/login']);
 	}
 }

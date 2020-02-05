@@ -13,5 +13,7 @@ export class UsuarioService extends AbstractService<Usuario> {
         super('usuario', dbService);
      }
 
-     
+     getInfoUser(): Usuario {
+             return JSON.parse(localStorage.getItem('USER'));
+     }
 }
