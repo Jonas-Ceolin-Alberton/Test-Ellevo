@@ -1,10 +1,11 @@
 import { Routes } from '@angular/router';
-import { ListaContatosComponent } from './lista-contatos/lista-contatos.component';
+
+import { ContatosComponent } from './contatos/contatos.component';
 
 export const ContatoRouting: Routes = [
     {
-        path: 'lista-contatos',
-        component: ListaContatosComponent
+        path: 'contatos',
+        component: ContatosComponent
     },
 
  ];

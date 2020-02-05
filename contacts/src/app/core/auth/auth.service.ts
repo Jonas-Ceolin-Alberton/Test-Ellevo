@@ -54,7 +54,7 @@ export class AuthService {
 	}
 
 	private navigateToApp(): void {
-		this.router.navigate(['/app']);
+		this.router.navigate(['/app/contatos']);
 	}
 
 	private navigateToLogin(): void {

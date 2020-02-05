@@ -1,14 +1,19 @@
+import { MatCardModule, MatIconModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { ListaContatosComponent } from './lista-contatos/lista-contatos.component';
+import { ContatosComponent } from './contatos/contatos.component';
+import { PipeModule } from 'src/app/shared/pipes/pipe.module';
 
 @NgModule({
 	declarations: [
-		ListaContatosComponent
+		ContatosComponent
 	],
 	imports: [
-		CommonModule
+		CommonModule,
+		MatCardModule,
+		MatIconModule,
+		PipeModule
 	]
 })
 export class ContatoModule { }

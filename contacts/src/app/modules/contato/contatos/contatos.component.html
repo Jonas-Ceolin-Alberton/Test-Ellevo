@@ -1,0 +1,9 @@
+<mat-card class="card-container">
+	<span class="qtd-contatos">{{contatos.length}} Contatos Encontrados</span>
+	<div class="item" *ngFor="let contato of contatos">
+		<mat-icon class="user-icon">account_circle</mat-icon>
+		<span>{{contato.nome}}</span>
+		<span>{{contato.email}}</span>
+		<span>{{contato.telefone | phone}}</span>
+	</div>
+</mat-card>

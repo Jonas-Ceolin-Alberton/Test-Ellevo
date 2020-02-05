@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Usuario } from 'src/app/shared/models/usuario.model';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
+import { UtilService } from 'src/app/shared/utils/util.service';
+import { AuthService } from 'src/app/core/auth/auth.service';
 
 @Component({
 	selector: 'app-cadastro-usuario',
@@ -13,7 +15,10 @@ export class CadastroUsuarioComponent implements OnInit {
 
     @ViewChild('form') form;
 
-	constructor(private usuarioService: UsuarioService) { }
+	constructor(
+		private usuarioService: UsuarioService,
+		private authService: AuthService,
+		private utilService: UtilService) { }
 
 	ngOnInit() {
 	}
@@ -26,8 +31,8 @@ export class CadastroUsuarioComponent implements OnInit {
 	
 	onSubmit(): void {
 		this.usuarioService.save(this.usuario).then( 
-			user => console.log('user', user),
-			error => console.log('rr', error)
+			user => this.authService.doLogin(this.usuario),
+			error => this.utilService.aviso('Erro ao tentar cadastrar usuario')
 		)
 	}
 }

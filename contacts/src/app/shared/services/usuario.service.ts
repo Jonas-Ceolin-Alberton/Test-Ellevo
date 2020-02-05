@@ -10,10 +10,10 @@ import { Usuario } from '../models/usuario.model';
 export class UsuarioService extends AbstractService<Usuario> {
 
 	constructor(dbService: NgxIndexedDBService) {
-        super('usuario', dbService);
-     }
+		super('usuario', dbService);
+	}
 
-     getInfoUser(): Usuario {
-             return JSON.parse(localStorage.getItem('USER'));
-     }
+	getInfoUser(): Usuario {
+		return JSON.parse(localStorage.getItem('USER'));
+	}
 }
