@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Contato } from 'src/app/shared/models/contato.model';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-contatos',
@@ -10,7 +12,8 @@ export class ContatosComponent implements OnInit {
 
 	contatos: Contato[] = [];
 
-	constructor() { }
+	constructor(
+		private router: Router) { }
 
 	ngOnInit() {
 		this.loadContatos();
@@ -28,5 +31,9 @@ export class ContatosComponent implements OnInit {
 
 	ordernarLista(): void {
 		this.contatos.sort((a, b) => a.nome.localeCompare(b.nome));
+	}
+
+	cadastrarUsuario(): void {
+		this.router.navigate(['app/contato/cadastro']);
 	}
 }

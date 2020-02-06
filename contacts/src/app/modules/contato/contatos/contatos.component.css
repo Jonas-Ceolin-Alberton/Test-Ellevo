@@ -41,6 +41,14 @@
     margin-right: 30px;
 }
 
+.button-add {
+    background-color: #00928d;
+    color: white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+}
+
 @media (max-width: 800px) {
     
     .item span:nth-child(1n + 3){
