@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 
 import { ContatosComponent } from './contatos/contatos.component';
 import { PipeModule } from 'src/app/shared/pipes/pipe.module';
+import { ContatoComponent } from './contato/contato.component';
 
 @NgModule({
 	declarations: [
-		ContatosComponent
+		ContatosComponent,
+		ContatoComponent
 	],
 	imports: [
 		CommonModule,
