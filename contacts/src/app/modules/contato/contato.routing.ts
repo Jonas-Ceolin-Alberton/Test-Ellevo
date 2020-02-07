@@ -15,7 +15,6 @@ export const ContatoRouting: Routes = [
     },
     {
         path: 'contato',
-        component: ContatoComponent
+        component: ContatoComponent,
     },
-
  ];

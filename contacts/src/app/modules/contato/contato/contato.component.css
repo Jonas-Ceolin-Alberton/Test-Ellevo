@@ -1,0 +1,61 @@
+.contato-card {
+    max-width: 500px;
+    display: flex;
+    flex-flow: column;
+    margin: auto;
+    margin-top: 50px;
+    padding: 0!important;
+}
+
+.green-container {
+    width: 100%;
+    height: 120px;
+    background-color: #00928d;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+}
+
+.photo-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    left: calc(50% - 50px);
+    bottom: -50px;
+    box-shadow: 0px 1px 2px grey;
+}
+
+.photo-container > mat-icon {
+    margin: auto;
+    font-size: 80px;
+    width: 80px;
+    height: 80px;
+    color: #c5c5c5;
+    user-select: none;
+}
+
+.user-details {
+    padding: 50px 30px 16px 30px;
+    display: flex;
+    flex-flow: column;
+}
+
+.form {
+    display: flex;
+    flex-flow: column;
+}
+
+.save-button {
+    background-color: #00bcb6;
+    color: white;
+    margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+    
+    :host {
+        padding: 0 20px;
+    }
+}

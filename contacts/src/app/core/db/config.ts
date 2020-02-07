@@ -17,12 +17,12 @@ export const DB_CONFIG: DBConfig = {
             ]
         },
         {
-            store: 'contatos',
-            storeConfig: { keyPath: 'id', autoIncrement: true },
+            store: 'contato',
+            storeConfig: { keyPath: 'id', autoIncrement: false },
             storeSchema: [
                 { name: 'id', keypath: 'id', options: { unique: true } },
-                { name: 'nome', keypath: 'nome', options: { unique: true } },
-                { name: 'telefone', keypath: 'telefone', options: { unique: true } },
+                { name: 'nome', keypath: 'nome', options: { unique: false } },
+                { name: 'telefone', keypath: 'telefone', options: { unique: false } },
             ]
         }],
 };

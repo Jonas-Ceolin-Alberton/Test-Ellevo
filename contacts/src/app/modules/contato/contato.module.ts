@@ -1,5 +1,6 @@
-import { MatCardModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { ContatosComponent } from './contatos/contatos.component';
@@ -12,11 +13,14 @@ import { PipeModule } from 'src/app/shared/pipes/pipe.module';
 		ContatoComponent
 	],
 	imports: [
+		MatFormFieldModule,
 		MatButtonModule,
+        MatInputModule,
 		MatCardModule,
 		MatIconModule,
 		CommonModule,
-		PipeModule
+		FormsModule,
+		PipeModule,
 	]
 })
 export class ContatoModule { }

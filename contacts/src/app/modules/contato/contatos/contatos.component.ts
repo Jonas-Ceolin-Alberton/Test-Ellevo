@@ -34,6 +34,6 @@ export class ContatosComponent implements OnInit {
 	}
 
 	cadastrarUsuario(): void {
-		this.router.navigate(['app/contato/cadastro']);
+		this.router.navigate(['app/contato'], {queryParams: { mode: 'new'}});
 	}
 }
