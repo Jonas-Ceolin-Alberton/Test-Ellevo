@@ -36,6 +36,7 @@
     width: 800px;
     height: 26px;
     padding-left: 10px;
+    border-radius: 50px;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

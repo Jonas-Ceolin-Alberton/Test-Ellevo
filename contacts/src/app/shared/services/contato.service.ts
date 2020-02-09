@@ -13,8 +13,12 @@ export class ContatoService extends AbstractService<Contato> {
 		super('contato', dbService);
     }
     
-    saveNewContato(contato: Contato): void {
+    salvarContato(contato: Contato): Promise<any> {
+        if(contato.id) {
+            return this.update(contato);
+        }
+
         contato.id = this.generateId();
-        this.save(contato);
+        return this.save(contato);
     }
 }

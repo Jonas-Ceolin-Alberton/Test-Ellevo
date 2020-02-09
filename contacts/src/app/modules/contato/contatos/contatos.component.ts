@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ContatoService } from 'src/app/shared/services/contato.service';
+import { UtilService } from 'src/app/shared/utils/util.service';
 import { Contato } from 'src/app/shared/models/contato.model';
 import { Router } from '@angular/router';
 
@@ -13,20 +15,22 @@ export class ContatosComponent implements OnInit {
 	contatos: Contato[] = [];
 
 	constructor(
-		private router: Router) { }
+		private router: Router,
+		private utilService: UtilService,
+		private contatoService: ContatoService) { }
 
 	ngOnInit() {
 		this.loadContatos();
 	}
 
 	loadContatos(): void {
-		this.contatos = [
-			{nome: 'Jonas Ceolin Alberton', email: 'jonasceolin@gmail.com', telefone: '48996476056'},
-			{nome: 'Matheus warmelin Matias', email: 'matheus@gmail.com', telefone: '48996450546'},
-			{nome: 'Cristiano Dacio', email: 'cidacio@gmail.com', telefone: '48996450546'},
-		] as any;
-
-		this.ordernarLista();
+		this.contatoService.getAll().then(
+			_contatos => {
+				this.contatos = _contatos;
+				this.ordernarLista();
+			},
+			error => this.utilService.aviso('Erro ao carregar contatos')
+		);
 	}
 
 	ordernarLista(): void {
@@ -34,6 +38,10 @@ export class ContatosComponent implements OnInit {
 	}
 
 	cadastrarUsuario(): void {
-		this.router.navigate(['app/contato'], {queryParams: { mode: 'new'}});
+		this.router.navigate(['app/contato/form'], { queryParams: { mode: 'new' } });
+	}
+
+	navigateContatoView(contato: Contato): void {
+		this.router.navigate(['app/contato/view'], { queryParams: { id: contato.id } });
 	}
 }

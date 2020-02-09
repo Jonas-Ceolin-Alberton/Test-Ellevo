@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 
 import { ContatosComponent } from './contatos/contatos.component';
-import { ContatoComponent } from './contato/contato.component';
+import { ContatoViewComponent } from './contato-view/contato-view.component';
+import { ContatoFormComponent } from './contato-form/contato-form.component';
 
 export const ContatoRouting: Routes = [
     {
@@ -14,7 +15,11 @@ export const ContatoRouting: Routes = [
         component: ContatosComponent
     },
     {
-        path: 'contato',
-        component: ContatoComponent,
+        path: 'contato/view',
+        component: ContatoViewComponent,
+    },
+    {
+        path: 'contato/form',
+        component: ContatoFormComponent,
     },
  ];
