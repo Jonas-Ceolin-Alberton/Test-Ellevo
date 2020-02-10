@@ -1,9 +1,6 @@
 import { NgxIndexedDBService } from 'ngx-indexed-db';
 import { Injectable } from '@angular/core';
 
-@Injectable({
-    providedIn: 'root'
-})
 export class AbstractService<T> {
 
     constructor(
