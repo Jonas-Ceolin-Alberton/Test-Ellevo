@@ -3,23 +3,27 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppContainerComponent } from './app-container.component';
 
 describe('AppContainerComponent', () => {
-  let component: AppContainerComponent;
-  let fixture: ComponentFixture<AppContainerComponent>;
+	let component: AppContainerComponent;
+	let fixture: ComponentFixture<AppContainerComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AppContainerComponent ]
-    })
-    .compileComponents();
-  }));
+	beforeEach(async(() => {
+		TestBed.configureTestingModule({
+			declarations: [
+				AppContainerComponent
+			],
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AppContainerComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+		})
+			.overrideTemplate(AppContainerComponent, '')
+			.compileComponents();
+	}));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	beforeEach(() => {
+		fixture = TestBed.createComponent(AppContainerComponent);
+		component = fixture.componentInstance;
+		fixture.detectChanges();
+	});
+
+	it('should create', () => {
+		expect(component).toBeTruthy();
+	});
 });
