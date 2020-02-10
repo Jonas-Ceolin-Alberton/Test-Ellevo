@@ -11,3 +11,14 @@
     z-index: 10;
 }
 
+.container-router {
+    overflow: auto;
+    will-change: transform3d;
+    box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+    .container-router {
+        padding: 0 10px;
+    }
+}

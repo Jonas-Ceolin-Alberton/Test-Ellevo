@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 import { ContatoService } from 'src/app/shared/services/contato.service';
@@ -16,6 +16,7 @@ export class ContatoViewComponent {
 	id: string;
 
 	constructor(
+		private router: Router,
 		private route: ActivatedRoute,
 		private utilService: UtilService,
 		private contatoService: ContatoService) {
@@ -31,5 +32,18 @@ export class ContatoViewComponent {
 			_contato => this.contato = _contato,
 			_error => this.utilService.aviso('Erro ao buscar o contato')
 		);
+	}
+
+	navigateEdit(contato: Contato): void {
+		this.router.navigate(['app/contato/form'], { queryParams: { mode: 'new', id: contato.id } });
+	}
+
+	deletar(contato: Contato): void {
+		this.contatoService.delete(contato.id).then(
+			_v => {
+				this.utilService.aviso('Contato Deletado'!);
+				this.router.navigate(['app/contatos']);
+			}
+		)
 	}
 }

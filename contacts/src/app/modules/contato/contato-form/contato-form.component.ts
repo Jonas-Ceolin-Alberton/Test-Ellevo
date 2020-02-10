@@ -41,6 +41,12 @@ export class ContatoFormComponent {
 	}
 
 	salvarContato(contato): void {
-		this.contatoService.salvarContato(contato);
+		this.contatoService.salvarContato(contato).then(
+			_ok => {
+				this.utilService.aviso('Lista atualizada com sucesso!');
+				window.history.back();
+			},
+			_error => this.utilService.aviso('Erro ao tentar salvar')
+		)
 	}
 }

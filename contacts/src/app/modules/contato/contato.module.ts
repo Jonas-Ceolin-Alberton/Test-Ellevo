@@ -1,4 +1,4 @@
-import { MatCardModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatCardModule, MatIconModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatMenuModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -22,6 +22,7 @@ import { PipeModule } from 'src/app/shared/pipes/pipe.module';
         MatInputModule,
 		MatCardModule,
 		MatIconModule,
+		MatMenuModule,
 		CommonModule,
 		FormsModule,
 		PipeModule,

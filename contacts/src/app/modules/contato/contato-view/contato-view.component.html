@@ -1,5 +1,23 @@
 <app-card-contato>
-	<h3>{{contato.nome}}</h3>
-	<span>{{contato.email}}</span>
-	<span>{{contato.telefone | phone}}</span>
+	<div class="buttons">
+		<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+			<mat-icon>more_vert</mat-icon>
+		</button>
+		<mat-menu #menu="matMenu">
+			<button mat-menu-item (click)="navigateEdit(contato)">
+				<mat-icon>edit</mat-icon>
+				<span>Editar</span>
+			</button>
+		
+			<button mat-menu-item (click)="deletar(contato)">
+				<mat-icon>delete</mat-icon>
+				<span>Deletar</span>
+			</button>
+		</mat-menu>
+	</div>
+	<div class="info">
+		<h3>{{contato.nome}}</h3>
+		<span>{{contato.email}}</span>
+		<span>{{contato.telefone | phone}}</span>
+	</div>
 </app-card-contato>

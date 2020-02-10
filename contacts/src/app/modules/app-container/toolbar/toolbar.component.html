@@ -1,8 +1,9 @@
 <div class="toolbar-container primary">
-	<h3 class="titulo-rota">Contatos</h3>
-
-	<div class="pesquisa">
-		<input class="input primary-black" placeholder="Pesquisar..">
+	<div class="first-container">
+		<h3 *ngIf="!showBackButton">Contatos</h3>
+		<button mat-icon-button *ngIf="showBackButton" (click)="navigationBack()" >
+			<mat-icon>arrow_back</mat-icon>
+		</button>
 	</div>
 
 	<div class="exit">

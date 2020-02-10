@@ -20,7 +20,6 @@ export class AbstractService<T> {
     }
 
     getById(id: string | number): Promise<T> {
-        console.log('id', id);
         return this.dbService.getByKey(this.store, id);
     }
 

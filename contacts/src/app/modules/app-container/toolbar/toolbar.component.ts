@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { AuthService } from 'src/app/core/auth/auth.service';
 import { Usuario } from 'src/app/shared/models/usuario.model';
 import { UsuarioService } from 'src/app/shared/services/usuario.service';
@@ -13,15 +13,18 @@ export class ToolbarComponent implements OnInit {
 	@Output() menuToggle: EventEmitter<any> = new EventEmitter();
 	titulo: string = 'Edu';
 	nomeUsuario: string;
+	showBackButton = false;
 
 	constructor(
 		private usuarioService: UsuarioService,
 		private authService: AuthService,
 		private router: Router) {
-		this.getNomeUsuario()
+
+			this.subscribeRouteChanges();
 	}
 
 	ngOnInit() {
+		this.getNomeUsuario()
 	}
 
 	doLogout(): void {
@@ -40,5 +43,27 @@ export class ToolbarComponent implements OnInit {
 		const { nome } = this.usuarioService.getInfoUser();
 		const index = nome.indexOf(' ');
 		this.nomeUsuario = index >= 0 ? nome.substr(0, index) : nome;
+	}
+
+	private subscribeRouteChanges(): void {
+		this.router.events.subscribe((rota) => {
+			if (rota instanceof NavigationEnd) {
+				this.setConfigToolbar(rota);
+			}
+		});
+	}
+
+	setConfigToolbar(rota: NavigationStart) {
+		const rotaContatos = '/app/contatos';
+
+		if(rota.url === rotaContatos) {
+			this.showBackButton = false;
+			return 
+		}
+		this.showBackButton = true;
+	}
+
+	navigationBack(): void {
+		window.history.back();
 	}
 }
